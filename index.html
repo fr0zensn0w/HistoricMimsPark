@@ -12,9 +12,15 @@
 
         <a-scene physics>
         <!-- physics -->
-        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="25 2.2 -200">
+        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="0 2.2 8">
 				<a-entity id="cursor" cursor="fuse: true; maxDistance: 3.5" geometry="primitive: sphere; radius:1;" material="color: red; opacity: 0;" position="0 0 -0.69"></a-entity>
 			</a-entity>
+
+			<!-- ASSETS -->
+			<a-assets>
+			    <a-asset-item id="tree-obj" src="/Models/Tree/tree3.obj"></a-asset-item>
+			    <a-asset-item id="tree-mtl" src="/Models/Tree/tree3.mtl"></a-asset-item>
+			</a-assets>
 
 			<!-- sky -->
 			<a-sky src="images/sky.jpg"></a-sky>
@@ -23,6 +29,16 @@
 			<a-entity static-body geometry="primitive: box; depth: 103; height: 0.1; width: 367" position="0 0 -142" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 20 20"></a-entity>
 		<!-- ================================================================================== -->
 		<!-- AREA 1 -->
+		<!-- trees -->
+		
+			<a-entity position="-13 2.5 -13" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+			<a-entity position="13 2.5 13" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+			<a-entity position="-13 2.5 13" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+			<a-entity position="13 2.5 -13" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+			<a-entity position="-18 2.5 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+			<a-entity position="18 2.5 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+
+
 		<!-- TOP GRAVEL AREA -->
 			<a-entity static-body geometry="primitive: box; width: 82.5; height: 11; depth: .15" position=".75 0 -319.5" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 50 3.5"></a-entity>
 
@@ -62,13 +78,13 @@
 			<a-entity position="22 .14 -230" rotation="90 0 0" geometry="primitive: circle; radius: 10" material="side: double; src:url(images/gravel.jpg); repeat: 5 5">
 				<!-- FOUNTAIN -->
 				<!-- water on fountain -->
-				<a-entity static-body position="0 0 -.51" rotation="0 0 0" geometry="primitive: circle; radius: 6" material="side: double; color: #0099CC; repeat: 5 5"></a-entity>
+				<a-entity position="0 0 -.51" rotation="0 0 0" geometry="primitive: circle; radius: 6" material="side: double; color: #0099CC; repeat: 5 5"></a-entity>
 				<!-- grey base for fountain -->
-				<a-entity static-body rotation="90 0 0" geometry="primitive: cylinder; height: 1; radius: 6.5" material="side: double; color: #343434; repeat: 5 5"></a-entity>
+				<a-entity rotation="90 0 0" geometry="primitive: cylinder; height: 1; radius: 6.5" material="side: double; color: #343434; repeat: 5 5"></a-entity>
 				<!-- TODO: add the actual fountain -->
 
 				<!-- paths from the fountain -->
-				<!-- bottom right -->
+				<!-- bottom rigsht -->
 				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .15" position="15 10 .15" rotation="0 0 35" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
 				<!-- top right -->
 				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .15" position="15 -10 .15" rotation="0 0 325" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
@@ -83,9 +99,9 @@
 			<a-entity position="22 .14 -120" rotation="90 0 0" geometry="primitive: circle; radius: 10" material="side: double; src:url(images/gravel.jpg); repeat: 5 5">
 				<!-- FOUNTAIN -->
 				<!-- water on fountain -->
-				<a-entity static-body position="0 0 -.51" rotation="0 0 0" geometry="primitive: circle; radius: 6" material="side: double; color: #0099CC; repeat: 5 5"></a-entity>
+				<a-entity position="0 0 -.51" rotation="0 0 0" geometry="primitive: circle; radius: 6" material="side: double; color: #0099CC; repeat: 5 5"></a-entity>
 				<!-- grey base for fountain -->
-				<a-entity static-body rotation="90 0 0" geometry="primitive: cylinder; height: 1; radius: 6.5" material="side: double; color: #343434; repeat: 5 5"></a-entity>
+				<a-entity rotation="90 0 0" geometry="primitive: cylinder; height: 1; radius: 6.5" material="side: double; color: #343434; repeat: 5 5"></a-entity>
 				<!-- TODO: add the actual fountain -->
 
 				<!-- paths from the fountain -->
@@ -135,6 +151,10 @@
           material="side: double"></a-entity>
 	          	<a-entity position="0 5 1" geometry="primitive: ring; radiusInner: 0.7; radiusOuter: 1; thetaStart: 45; thetaLength: 90"
 	          material="side: double"></a-entity>
+
+	          <!-- <a-entity scale="0.1 .1 .1" obj-model="obj: url(/Models/Tree/tree2.obj); mtl: url(/Models/Tree/tree2.mtl)" position="0 0 5" rotation="-90 0 0"></a-entity> -->
+
+
             </a-entity>
 
             <!-- roads -->
@@ -173,6 +193,8 @@
 			<!-- top of the lake -->
 			<a-entity position="-41 .1 -15" rotation="0 180 0" geometry="primitive: cylinder; openEnded: false; thetaLength: 190; height: .05; radius: 30; segmentsRadial: 50; thetaStart: 190"
           material="side: double; color: #0099CC"></a-entity>
+
+
 
 		</a-entity>
 
