@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+<!--         <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script> -->
+        <script src="https://aframe.io/releases/0.2.0/aframe.js"></script>
+        <!-- <script src="aframe.min.js"></script> -->
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
+    </head>
+    
+    <body>
+
+        <a-scene physics stats>
+        <!-- physics -->
+        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="0 2.2 8">
+				<a-entity id="cursor" cursor="fuse: true; maxDistance: 3.5" geometry="primitive: sphere; radius:1;" material="color: red; opacity: 0;" position="0 0 -0.69"></a-entity>
+			</a-entity>
+
+			<!-- sky -->
+			<a-sky src="images/sky.jpg"></a-sky>
+			
+			<!-- ground 1/2-->
+			<a-entity static-body geometry="primitive: box; depth: 103; height: 0.1; width: 367" position="0 0 -142" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 20 20"></a-entity>
+		<!-- ================================================================ -->
+		<!-- AREA 2 -->
+			<!-- map backing and front-->
+        	<a-entity static-body geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 1.99" rotation="0 180 0" material="shader: flat; transparent: true; color: #000"></a-entity>
+			<a-entity geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 2" material="shader: flat; side: double; transparent: true; src:url(images/recommendation-2.jpg)">
+				<!-- you are here sphere -->
+				<a-cylinder position="-.63 -1.35 .15" radius=".05" height=".3" rotation="90 0 0" color="blue"></a-cylinder>
+			</a-entity>
+            
+			<!-- main start circle AKA origin -->
+            <a-entity geometry="primitive: circle; radius: 15" position="0 .1 0" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
+
+            <!-- walkway through origin-->
+            <a-entity geometry="primitive: box; width: 15; height: 100; depth: .15" position="0 0 -8.5" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 50"></a-entity>
+
+            <!-- walkway perpindicular right-->
+            <a-entity geometry="primitive: box; width: 29; height: 20; depth: .15" position="22 0 -45" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 5 5"></a-entity>
+            <!-- walkway perpindicular left-->
+            <a-entity geometry="primitive: box; width: 45; height: 20; depth: .15" position="-30 0 -45" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 5 5"></a-entity>
+
+            <!-- circle at the end of the main walkway -->
+            <a-entity geometry="primitive: circle; radius: 5" position="0 .1 -57" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 5 5"></a-entity>
+
+            <!-- walkway on right side of origin-->
+            <a-entity geometry="primitive: box; width: 15; height: 120; depth: .15" position="44 0 -18.5" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 50"></a-entity>
+
+
+            <!-- RANDOM GLASS testing relative shapes-->
+            <a-entity static-body geometry="primitive: plane; height: 20; width: 20" position="0 6 0" rotation="90 0 0" material="shader: flat; side: double; opacity: 0.2; color: #2e1908;">
+            	<a-sphere position="0 2 0" radius="1" color="red"></a-sphere>
+            </a-entity>
+
+		<!-- ================================================================ -->
+		<!-- Scene 3 -->
+		<a-entity static-body geometry="primitive: box; depth: 128; height: 0.1; width: 70" position="125 0 -290.5" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 20 20">
+			
+
+		</a-entity>
+
+		<!-- ================================================================ -->
+		<!-- Scene 3 -->
+		<a-entity static-body geometry="primitive: box; depth: 128; height: 0.1; width: 70" position="125 0 -210.5" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 20 20">
+			
+
+		</a-entity>
+
+		<!-- ================================================================ -->
+		<!-- Scene 4 -->
+		<a-entity static-body geometry="primitive: box; depth: 128; height: 0.1; width: 100" position="125 0 -115.5" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 20 20">
+			
+
+		</a-entity>
+
+        </a-scene>
+    </body>
+</html>
