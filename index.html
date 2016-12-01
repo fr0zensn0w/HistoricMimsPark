@@ -12,7 +12,7 @@
 
         <a-scene physics>
         <!-- physics -->
-        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="0 2.2 8">
+        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="-35 2.2 -190">
 				<a-entity id="cursor" cursor="fuse: true; maxDistance: 3.5" geometry="primitive: sphere; radius:1;" material="color: red; opacity: 0;" position="0 0 -0.69"></a-entity>
 			</a-entity>
 
@@ -26,7 +26,7 @@
 			<a-sky src="images/sky.jpg"></a-sky>
 			
 			<!-- ground 1/2-->
-			<a-entity static-body geometry="primitive: box; depth: 103; height: 0.1; width: 367" position="0 0 -142" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 20 20"></a-entity>
+			<a-entity static-body geometry="primitive: box; depth: 103; height: 0.14; width: 367" position="0 0 -142" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 20 20"></a-entity>
 		<!-- ================================================================================== -->
 		<!-- AREA 1 -->
 		<!-- trees -->
@@ -58,11 +58,68 @@
 
 			<!-- BISECTING PATH -->
 			<a-entity geometry="primitive: box; width: 5; height: 145; depth: .15" position="0 0 -175" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 50"></a-entity>
+			<!-- outcropping of bisecting path -->
+			<a-entity geometry="primitive: box; width: 5; height: 15; depth: .15" position="5 0 -175" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 3.5"></a-entity>
 
 			<!-- =====Left side of the area===== -->
 
-			<!-- left pedestal box -->
+			<!-- left pedestal ground-->
 			<a-entity geometry="primitive: box; width: 10; height: 30; depth: .15" position="-35.5 0 -175" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 5"></a-entity>
+
+			<!-- platform/pedastal -->
+			<a-entity static-body geometry="primitive: box; width: 11; height: 20; depth: 5" position="-38.5 0 -175" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5">
+				<!-- central pillar -->
+				<!-- pillar base -->
+				<a-entity geometry="primitive: box; width: 3; height: 3; depth: 3" position="0 0 -3" rotation="0 0 0" material="side: double; color: #3D2918; repeat: 3.5 5">
+					<a-entity position="0 0 -12" geometry="primitive: cylinder; height: 50; radius: 1.25" rotation="90 0 0" material="side: front; color: #7A5230"></a-entity>
+				</a-entity>
+				<!-- statue pedastal -->
+				<a-entity geometry="primitive: box; width: 1; height: 1; depth: 2" position="4.5 9 -3" rotation="0 0 45" material="side: double; color: #B0AFAE; repeat: 3.5 5">
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 -1" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 .4" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+				</a-entity>
+				<!-- north right statue pedastal -->
+				<a-entity geometry="primitive: box; width: 1; height: 1; depth: 2" position="4.5 -9 -3" rotation="0 0 45" material="side: double; color: #B0AFAE; repeat: 3.5 5">
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 -1" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 .4" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+				</a-entity>
+				<!-- middle right statue pedastal -->
+				<a-entity geometry="primitive: box; width: 1; height: 1; depth: 2" position="9.3 0 -.5" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5">
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 -1" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 .4" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+				</a-entity>
+
+			</a-entity>
+			<!-- pillar top platform (needed for physics/gravity/location)-->
+			<a-entity static-body geometry="primitive: box; width: 4; height: 4; depth: .5" position="-38.5 40 -175" rotation="90 0 0" material="side: double; color: #3D2918; repeat: 3.5 5"></a-entity>
+
+
+
+			<!-- staris -->
+			<!-- south stairs -->
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-36.5 0 -165" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-37.5 .5 -165" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-38.5 1 -165" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-39.5 1.5 -165" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-40.5 2 -165" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 3; height: 4; depth: .5" position="-42.5 2.25 -165" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+
+			<!-- north stairs -->
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-36.5 0 -185" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-37.5 .5 -185" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-38.5 1 -185" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-39.5 1.5 -185" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 4; depth: .5" position="-40.5 2 -185" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 3; height: 4; depth: .5" position="-42.5 2.25 -185" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+
+			<!-- east staris -->
+
+			<a-entity static-body geometry="primitive: box; width: 1; height: 20; depth: .5" position="-44.5 1.5 -175" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 20; depth: .5" position="-45.5 1 -175" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 1; height: 20; depth: .5" position="-46.5 .5 -175" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+			<a-entity static-body geometry="primitive: box; width: 4; height: 20; depth: .25" position="-48.5 .25 -175" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
+
+
 
 			<!-- LEFT SEMICIRCLE -->
 			<a-entity position="-78 .12 -175" rotation="90 0 0" geometry="primitive: ring; radiusInner: 75; radiusOuter: 80; thetaStart: -63; thetaLength: 125" material="side: double; src:url(images/gravel.jpg); repeat: 60 60"></a-entity>
@@ -72,12 +129,20 @@
 
 			<!-- TOP LEFT GRAVEL CIRCLE -->
 			<a-entity position="-15 .14 -220" rotation="90 0 0" geometry="primitive: circle; radius: 5" material="side: double; src:url(images/gravel.jpg); repeat: 5 5">
-				<!-- TODO: STATUE HERE -->
+				<!-- statue base -->
+				<a-entity geometry="primitive: box; width: 1; height: 1; depth: 2" position="0 0 -.5" rotation="0 0 45" material="side: double; color: #B0AFAE; repeat: 3.5 5">
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 -1" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 .4" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+				</a-entity>
 			</a-entity>
 
 			<!-- BOTTOM LEFT GRAVEL CIRCLE -->
 			<a-entity position="-15 .14 -130" rotation="90 0 0" geometry="primitive: circle; radius: 5" material="side: double; src:url(images/gravel.jpg); repeat: 5 5">
-				<!-- TODO: STATUE HERE -->
+				<!-- statue base -->
+				<a-entity geometry="primitive: box; width: 1; height: 1; depth: 2" position="0 0 -.5" rotation="0 0 45" material="side: double; color: #B0AFAE; repeat: 3.5 5">
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 -1" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 .4" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
+				</a-entity>
 			</a-entity>
 
 			<!-- =====Right side of the area===== -->
@@ -92,10 +157,10 @@
 				<!-- TODO: add the actual fountain -->
 
 				<!-- paths from the fountain -->
-				<!-- bottom rigsht -->
-				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .15" position="15 10 .15" rotation="0 0 35" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
+				<!-- bottom right -->
+				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .17" position="15 10 .15" rotation="0 0 35" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
 				<!-- top right -->
-				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .15" position="15 -10 .15" rotation="0 0 325" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
+				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .17" position="15 -10 .15" rotation="0 0 325" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
 				<!-- top left curve -->
 				<a-entity position="-20 -3 -.1" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 35; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
 				<!-- bottom left curve -->
@@ -114,9 +179,9 @@
 
 				<!-- paths from the fountain -->
 				<!-- bottom right -->
-				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .15" position="15 10 .15" rotation="0 0 35" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
+				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .17" position="15 10 .15" rotation="0 0 35" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
 				<!-- top right -->
-				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .15" position="15 -10 .15" rotation="0 0 325" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
+				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .17" position="15 -10 .15" rotation="0 0 325" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
 				<!-- top left curve -->
 				<a-entity position="-20 -3 -.1" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 35; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
 				<!-- bottom left curve -->
@@ -150,7 +215,7 @@
             <a-entity geometry="primitive: box; width: 10; height: 366.5; depth: .15" position="47 0 -141.75" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 50"></a-entity>
 
             <!-- WALKWAY ON LEFT OF ORIGIN -->
-            <a-entity geometry="primitive: box; width: 10; height: 366.5; depth: .15" position="-45.5 0 -141.75" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 50"></a-entity>
+            <a-entity static-body geometry="primitive: box; width: 10; height: 366.5; depth: .15" position="-45.5 0 -141.75" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 50"></a-entity>
 
             <!-- RANDOM GLASS testing relative shapes-->
             <a-entity static-body geometry="primitive: plane; height: 20; width: 20" position="0 6 0" rotation="90 0 0" material="shader: flat; side: double; opacity: 0.2; color: #2e1908;">
@@ -173,7 +238,7 @@
             <a-entity static-body geometry="primitive: box; width: 10; height: 280; depth: .15" position="190 0 -196" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
 
             <!-- left of 1 and 2 ELM ST NW-->
-            <a-entity static-body geometry="primitive: box; width: 10; height: 367; depth: .15" position="-55.5 0 -142" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity static-body geometry="primitive: box; width: 10; height: 367; depth: .15" position="-55.5 .12 -142" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
 
             <!-- diagonal between 1 and 2 THURMOND ST-->
             <a-entity geometry="primitive: box; width: 10; height: 120; depth: .16" position="0 0 -75" rotation="90 75 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
@@ -196,7 +261,7 @@
 
 
 		<!-- ================================================================================== -->
-		<!-- Scene 3 -->
+		<!-- Scene 3 Top Right-->
 		<a-entity static-body geometry="primitive: box; depth: 128; height: 0.1; width: 70" position="125 0 -290.5" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 10 10">r
 			<!-- top of the lake -->
 			<a-entity position="-41 .1 -15" rotation="0 180 0" geometry="primitive: cylinder; openEnded: false; thetaLength: 190; height: .05; radius: 30; segmentsRadial: 50; thetaStart: 190"
@@ -207,7 +272,7 @@
 		</a-entity>
 
 		<!-- ================================================================================== -->
-		<!-- Scene 4 -->
+		<!-- Scene 4 Middle Right-->
 		<a-entity static-body geometry="primitive: box; depth: 128; height: 0.1; width: 70" position="125 0 -210.5" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 10 10">
 			<!-- lake middle -->
 			<a-entity geometry="primitive: box; width: 90; height: 60; depth: .17" position="-5 .05 -7.25" rotation="90 10 0" material="side: double; color: #0099CC; repeat: 3.5 50"></a-entity>
@@ -215,8 +280,8 @@
 		</a-entity>
 
 		<!-- ================================================================================== -->
-		<!-- Scene 5 -->
-		<a-entity static-body geometry="primitive: box; depth: 128; height: 0.1; width: 100" position="125 0 -115.5" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 10 10">
+		<!-- Scene 5 Bottom right-->
+		<a-entity static-body geometry="primitive: box; depth: 128; height: 0.13; width: 100" position="125 0 -115.5" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 20 20">
 			<!-- bottom of the lake -->
 			<a-entity position="50 .1 0" rotation="0 90 0" geometry="primitive: cylinder; openEnded: false; thetaLength: 220; height: .05; radius: 31; segmentsRadial: 50; thetaStart: 80"
           material="side: double; color: #0099CC"></a-entity>
