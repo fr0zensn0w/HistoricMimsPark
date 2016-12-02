@@ -12,7 +12,7 @@
 
         <a-scene physics>
         <!-- physics -->
-        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="0 1.2  8">
+        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="0 1.2 8">
 				<a-entity id="cursor" cursor="fuse: true; maxDistance: 3.5" geometry="primitive: sphere; radius:1;" material="color: red; opacity: 0;" position="0 0 -0.69"></a-entity>
 			</a-entity>
 
@@ -24,7 +24,6 @@
 			    <a-asset-item id="bench-mtl" src="/Models/Bench/bench2.mtl"></a-asset-item>
 			</a-assets>
 
-			
 
 
 			<!-- sky -->
@@ -256,6 +255,7 @@
 				<!-- FOUNTAIN -->
 				<!-- water on fountain -->
 				<a-entity position="0 0 -.51" rotation="0 0 0" geometry="primitive: circle; radius: 6" material="side: double; color: #0099CC; repeat: 5 5"></a-entity>
+				<a-torus position="0 0 -.5" segments-radial="50" segments-tubular="200" radius="3" radius-tubular=".5" material="color: #0099CC; opacity: .4"></a-torus>
 				<!-- grey base for fountain -->
 				<a-entity rotation="90 0 0" geometry="primitive: cylinder; height: 1; radius: 6.5" material="side: double; color: #343434; repeat: 5 5"></a-entity>
 				<!-- TODO: add the actual fountain -->
@@ -281,6 +281,7 @@
 
 				<!-- water on fountain -->
 				<a-entity position="0 0 -.51" rotation="0 0 0" geometry="primitive: circle; radius: 6" material="side: double; color: #0099CC; repeat: 5 5"></a-entity>
+				<a-torus position="0 0 -.5" segments-radial="50" segments-tubular="200" radius="3" radius-tubular=".5" material="color: #0099CC; opacity: .4"></a-torus>
 				<!-- grey base for fountain -->
 				<a-entity rotation="90 0 0" geometry="primitive: cylinder; height: 1; radius: 6.5" material="side: double; color: #343434; repeat: 5 5"></a-entity>
 				<!-- TODO: add the actual fountain -->
@@ -300,7 +301,7 @@
 		<!-- AREA 2 -->
 			<!-- map backing and front-->
         	<a-entity static-body geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 1.99" rotation="0 180 0" material="shader: flat; transparent: true; color: #000"></a-entity>
-			<a-entity geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 2" material="shader: flat; side: double; transparent: true; src:url(images/Map2.jpg)">
+			<a-entity geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 2" material="shader: flat; side: double; transparent: true; src:url(images/Map2.jpg); opacity: 1">
 				<!-- you are here sphere -->
 				<a-cylinder position="-.63 -1.35 .15" radius=".05" height=".3" rotation="90 0 0" color="blue"></a-cylinder>
 			</a-entity>
@@ -583,6 +584,7 @@
 			<a-entity position="50 .1 0" rotation="0 90 0" geometry="primitive: cylinder; openEnded: false; thetaLength: 220; height: .05; radius: 31; segmentsRadial: 50; thetaStart: 80" material="side: double; color: #0099CC">
 				<!-- lake outline -->
 				<a-entity position="0 0 0" rotation="90 0 90" geometry="primitive: ring; radiusInner: 31; radiusOuter: 32; thetaStart: 35; thetaLength: 300" material="side: double; color: #343434; repeat: 10 10"></a-entity>
+				<a-torus position="0 0 -15" rotation="90 0 90" segments-radial="50" segments-tubular="200" radius="5" radius-tubular="2" material="color: #0099CC; opacity: .4"></a-torus>
           	
           </a-entity>
 
