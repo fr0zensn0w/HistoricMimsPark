@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!-- World by Adam Chow December 1, 2016 - 60 Hours in one week to complete -->
 <html>
     <head>
 <!--         <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script> -->
@@ -12,7 +12,7 @@
 
         <a-scene physics>
         <!-- physics -->
-        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="50 3.2 -300">
+        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="0 1.2  8">
 				<a-entity id="cursor" cursor="fuse: true; maxDistance: 3.5" geometry="primitive: sphere; radius:1;" material="color: red; opacity: 0;" position="0 0 -0.69"></a-entity>
 			</a-entity>
 
@@ -20,9 +20,12 @@
 			<a-assets>
 			    <a-asset-item id="tree-obj" src="/Models/Tree/tree3.obj"></a-asset-item>
 			    <a-asset-item id="tree-mtl" src="/Models/Tree/tree3.mtl"></a-asset-item>
-			    <a-asset-item id="house-obj" src="/Models/House/house.obj"></a-asset-item>
-			    <a-asset-item id="house-mtl" src="/Models/House/house.mtl"></a-asset-item>
+			    <a-asset-item id="bench-obj" src="/Models/Bench/bench2.obj"></a-asset-item>
+			    <a-asset-item id="bench-mtl" src="/Models/Bench/bench2.mtl"></a-asset-item>
 			</a-assets>
+
+			
+
 
 			<!-- sky -->
 			<a-sky src="images/sky.jpg"></a-sky>
@@ -33,6 +36,7 @@
 		<!-- AREA 1 -->
 		<!-- trees -->
 		
+			<!-- actually area 2 trees -->
 			<a-entity position="-13 2.5 -13" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 			<a-entity position="13 2.5 13" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 			<a-entity position="-13 2.5 -25" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
@@ -47,6 +51,18 @@
 			<a-entity position="13 2.5 -38" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 			<a-entity position="-18 2.5 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 			<a-entity position="18 2.5 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+
+			<!-- origin benches -->
+			<!-- left side benches -->
+			<a-entity position="-8 0 -32" rotation="0 90 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+			<a-entity position="-8 0 -19" rotation="0 90 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+			<a-entity position="-8 0 19" rotation="0 90 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+			<a-entity position="-8 0 31" rotation="0 90 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+			<!-- right side benches -->
+			<a-entity position="8 0 -32" rotation="0 270 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+			<a-entity position="8 0 -19" rotation="0 270 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+			<a-entity position="8 0 19" rotation="0 270 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+			<a-entity position="8 0 31" rotation="0 270 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
 
 
 		<!-- TOP GRAVEL AREA -->
@@ -98,6 +114,10 @@
 
 
 				<!-- right of the bisecting path -->
+				<!-- benches -->
+				<a-entity position="1.7 0 0" rotation="0 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="3.2 0 0" rotation="180 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+
 				<!-- top set of 4 -->
 				<a-entity position="8.5 -70 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 				<a-entity position="18.5 -68 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
@@ -200,6 +220,11 @@
 
 			<!-- TOP LEFT GRAVEL CIRCLE -->
 			<a-entity position="-15 .14 -220" rotation="90 0 0" geometry="primitive: circle; radius: 5" material="side: double; src:url(images/gravel.jpg); repeat: 5 5">
+
+				<!-- benches -->
+				<a-entity position="6 0 0" rotation="0 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="-6 0 0" rotation="180 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+
 				<!-- statue base -->
 				<a-entity geometry="primitive: box; width: 1; height: 1; depth: 2" position="0 0 -.5" rotation="0 0 45" material="side: double; color: #B0AFAE; repeat: 3.5 5">
 					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 -1" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
@@ -209,6 +234,10 @@
 
 			<!-- BOTTOM LEFT GRAVEL CIRCLE -->
 			<a-entity position="-15 .14 -130" rotation="90 0 0" geometry="primitive: circle; radius: 5" material="side: double; src:url(images/gravel.jpg); repeat: 5 5">
+				<!-- benches -->
+				<a-entity position="6 0 0" rotation="0 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="-6 0 0" rotation="180 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+
 				<!-- statue base -->
 				<a-entity geometry="primitive: box; width: 1; height: 1; depth: 2" position="0 0 -.5" rotation="0 0 45" material="side: double; color: #B0AFAE; repeat: 3.5 5">
 					<a-entity geometry="primitive: box; width: 1.3; height: 1.3; depth: .1" position="0 0 -1" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5"></a-entity>
@@ -220,6 +249,10 @@
 
 			<!-- TOP CIRCLE FOUNTAIN -->
 			<a-entity position="22 .14 -230" rotation="90 0 0" geometry="primitive: circle; radius: 10" material="side: double; src:url(images/gravel.jpg); repeat: 5 5">
+				<!-- benches -->
+				<a-entity position="11 0 0" rotation="0 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="-11 0 0" rotation="180 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+
 				<!-- FOUNTAIN -->
 				<!-- water on fountain -->
 				<a-entity position="0 0 -.51" rotation="0 0 0" geometry="primitive: circle; radius: 6" material="side: double; color: #0099CC; repeat: 5 5"></a-entity>
@@ -233,15 +266,19 @@
 				<!-- top right -->
 				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .17" position="15 -10 .15" rotation="0 0 325" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
 				<!-- top left curve -->
-				<a-entity position="-20 -3 -.1" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 35; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
+				<a-entity position="-20 -3 -.01" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 35; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
 				<!-- bottom left curve -->
-				<a-entity position="-20 4 -.1" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 270; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
+				<a-entity position="-20 4 -.01" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 270; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
 
 			</a-entity>
 
 			<!-- BOTTOM CIRCLE FOUNDTAIN -->
 			<a-entity position="22 .14 -122" rotation="90 0 0" geometry="primitive: circle; radius: 10" material="side: double; src:url(images/gravel.jpg); repeat: 5 5">
 				<!-- FOUNTAIN -->
+				<!-- benches -->
+				<a-entity position="11 0 0" rotation="0 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="-11 0 0" rotation="180 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+
 				<!-- water on fountain -->
 				<a-entity position="0 0 -.51" rotation="0 0 0" geometry="primitive: circle; radius: 6" material="side: double; color: #0099CC; repeat: 5 5"></a-entity>
 				<!-- grey base for fountain -->
@@ -254,22 +291,35 @@
 				<!-- top right -->
 				<a-entity geometry="primitive: box; width: 17; height: 3; depth: .17" position="15 -10 .15" rotation="0 0 325" material="side: double; src:url(images/gravel.jpg); repeat: 5 2"></a-entity>
 				<!-- top left curve -->
-				<a-entity position="-20 -3 -.1" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 35; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
+				<a-entity position="-20 -3 -.01" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 35; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
 				<!-- bottom left curve -->
-				<a-entity position="-20 4 -.1" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 270; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
+				<a-entity position="-20 4 -.01" rotation="0 0 0" geometry="primitive: ring; radiusInner: 15; radiusOuter: 18; thetaStart: 270; thetaLength: 55" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
 			</a-entity>
 
 		<!-- ================================================================================== -->
 		<!-- AREA 2 -->
 			<!-- map backing and front-->
         	<a-entity static-body geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 1.99" rotation="0 180 0" material="shader: flat; transparent: true; color: #000"></a-entity>
-			<a-entity geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 2" material="shader: flat; side: double; transparent: true; src:url(images/recommendation-2.jpg)">
+			<a-entity geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 2" material="shader: flat; side: double; transparent: true; src:url(images/Map2.jpg)">
 				<!-- you are here sphere -->
 				<a-cylinder position="-.63 -1.35 .15" radius=".05" height=".3" rotation="90 0 0" color="blue"></a-cylinder>
 			</a-entity>
             
 			<!-- main start circle AKA origin -->
             <a-entity geometry="primitive: circle; radius: 15" position="0 .1 0" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
+
+            <!-- PARK BENCH!!!!!! -->
+            <a-entity position="0 0 8" rotation="0 180 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+            <a-entity position="0 0 9.5" rotation="0 0 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+
+            <!-- trees -->
+            <!-- trees by the statue stand -->
+            <a-entity position="10 2.5 -60" rotation="0 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+            <a-entity position="-10 2.5 -60" rotation="0 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+            <a-entity position="20 2.5 -60" rotation="0 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+            <a-entity position="-20 2.5 -60" rotation="0 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+            <a-entity position="30 2.5 -60" rotation="0 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+            <a-entity position="-30 2.5 -60" rotation="0 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 
             <!-- walkway through origin-->
             <a-entity geometry="primitive: box; width: 15; height: 100; depth: .15" position="0 0 -8.5" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 50"></a-entity>
@@ -295,18 +345,12 @@
             <a-entity static-body geometry="primitive: box; width: 10; height: 366.5; depth: .15" position="-45.5 0 -141.75" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 50"></a-entity>
 
             <!-- RANDOM GLASS testing relative shapes-->
-            <a-entity static-body geometry="primitive: plane; height: 20; width: 20" position="0 6 0" rotation="90 0 0" material="shader: flat; side: double; opacity: 0.2; color: #2e1908;">
+            <!-- <a-entity static-body geometry="primitive: plane; height: 20; width: 20" position="0 6 0" rotation="90 0 0" material="shader: flat; side: double; opacity: 0.2; color: #2e1908;">
             	<a-sphere position="0 2 0" radius="1" color="red"></a-sphere>
             	<a-entity position="0 0 0" rotation="90 0 0" geometry="primitive: cylinder; openEnded: true; thetaLength: 180; height: 3; radius: 2; segmentsRadial: 0; thetaStart: 45" material="side: double"></a-entity>
 	          	<a-entity position="0 5 1" geometry="primitive: ring; radiusInner: 0.7; radiusOuter: 1; thetaStart: 45; thetaLength: 90" material="side: double"></a-entity>
-
-	          	
-
-
-	          <!-- <a-entity scale="0.1 .1 .1" obj-model="obj: url(/Models/Tree/tree2.obj); mtl: url(/Models/Tree/tree2.mtl)" position="0 0 5" rotation="-90 0 0"></a-entity> -->
-
-
-            </a-entity>
+	          	<a-entity position="-10 0 -10" scale="1.25 1.25 1.25" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+            </a-entity> -->
 
       
             <!-- roads -->
@@ -320,7 +364,7 @@
             <a-entity static-body geometry="primitive: box; width: 10; height: 367; depth: .15" position="-55.5 .12 -142" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
 
             <!-- diagonal between 1 and 2 THURMOND ST-->
-            <a-entity geometry="primitive: box; width: 10; height: 120; depth: .17" position="0 0 -75" rotation="90 75 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity geometry="primitive: box; width: 10; height: 120; depth: .17" position="0 0 -76" rotation="90 75 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
 
             <!-- THURMOND STREET NW-->
             <a-entity static-body geometry="primitive: box; width: 130; height: 10; depth: .15" position="125 0 -61" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
@@ -385,12 +429,6 @@
 
 
 
-
-
-
-
-
-
             <!-- JOSEPH E. BOONE BLVD NW -->
             <a-entity static-body geometry="primitive: box; width: 250; height: 11; depth: .15" position="64.5 0 -330.5" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
 
@@ -448,24 +486,23 @@
           <!-- concrete asphalt arms - top right -->
           <a-entity geometry="primitive: box; width: 11; height: 4; depth: .2" position="8 0 45" rotation="90 0 0" material="side: double; color: #b7b6b5; repeat: 3.5 5"></a-entity>
           <!-- concrete asphalt arms - bottom left -->
-s          <a-entity geometry="primitive: box; width: 25; height: 7; depth: .2" position="-22.5 0 30" rotation="90 0 0" material="side: double; color: #b7b6b5; repeat: 3.5 5"></a-entity>
+          <a-entity geometry="primitive: box; width: 25; height: 7; depth: .2" position="-22.5 0 30" rotation="90 0 0" material="side: double; color: #b7b6b5; repeat: 3.5 5"></a-entity>
+          <a-entity geometry="primitive: box; width: 25; height: 7; depth: .2" position="-15 0 30" rotation="90 0 0" material="side: double; color: #b7b6b5; repeat: 3.5 5"></a-entity>
           <!-- concrete asphalt arms - bottom right -->
           <a-entity geometry="primitive: box; width: 11; height: 4; depth: .2" position="-8 0 45" rotation="90 0 0" material="side: double; color: #b7b6b5; repeat: 3.5 5"></a-entity>
 
           <!-- north west buildings -->
-<!--           <a-entity static-body geometry="primitive: box; width: 11; height: 20; depth: 7" position="20 1.5 -45" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5">
-          </a-entity> -->
           <a-entity static-body geometry="primitive: box; width: 25; height: 60; depth: .12" position="20 .1 -30" rotation="90 0 0" material="side: double; color: #838782; repeat: 3.5 5">
           	<!-- right building -->
-          	<a-entity static-body geometry="primitive: box; width: 10; height: 7; depth: 15" position="0 10 0" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
-          	<a-entity static-body geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 10 0" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
-          	<a-entity static-body geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 10 -1" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
-          	<a-entity static-body geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 10 -3.5" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
+          	<a-entity geometry="primitive: box; width: 10; height: 7; depth: 15" position="0 10 0" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
+          	<a-entity geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 10 0" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
+          	<a-entity geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 10 -1" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
+          	<a-entity geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 10 -3.5" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
           	<!-- left building -->
-          	<a-entity static-body geometry="primitive: box; width: 10; height: 7; depth: 15" position="0 -20 0" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
-          	<a-entity static-body geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 -20 0" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
-          	<a-entity static-body geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 -20 -1" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
-          	<a-entity static-body geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 -20 -3.5" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
+          	<a-entity geometry="primitive: box; width: 10; height: 7; depth: 15" position="0 -20 0" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
+          	<a-entity geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 -20 0" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
+          	<a-entity geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 -20 -1" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
+          	<a-entity geometry="primitive: box; width: 10.5; height: .25; depth: 15.5" position="0 -20 -3.5" rotation="90 0 0" material="side: double; color: #a6aba4; repeat: 3.5 5"></a-entity>
 
           	<!-- right statue pedastel -->
           	<a-entity geometry="primitive: box; width: 1; height: 1; depth: 2" position="0 -1 -.5" rotation="0 0 0" material="side: double; color: #B0AFAE; repeat: 3.5 5">
@@ -497,6 +534,43 @@ s          <a-entity geometry="primitive: box; width: 25; height: 7; depth: .2" 
 				<a-entity geometry="primitive: box; width: 1; height: 79; depth: .17" position="5.5 -30.5 0" rotation="0 0 90" material="side: double; color: #343434; repeat: 3.5 50"></a-entity>
 				<!-- east edge -->
 				<a-entity geometry="primitive: box; width: 1; height: 78; depth: .17" position="7 30.5 0" rotation="0 0 90" material="side: double; color: #343434; repeat: 3.5 50"></a-entity>
+
+				<!-- trees left side of the pond -->
+				<a-entity position="40 -35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="30 -35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="20 -35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="10 -35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="0 -35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="-10 -35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="-20 -35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+
+				<!-- benches left side of pond -->
+				<a-entity position="-15 -35.5 0" rotation="270 0 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="-5 -35.5 0" rotation="270 0 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="5 -35.5 0" rotation="270 0 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="15 -35.5 0" rotation="270 0 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="25 -35.5 0" rotation="270 0 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="35 -35.5 0" rotation="270 0 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+
+				<!-- trees right side of the pond -->
+				
+				<a-entity position="30 35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="20 35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="10 35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="0 35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="-10 35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="-20 35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="-30 35.5 -2.5" rotation="270 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+
+				<!-- benches right side of pond -->
+				<a-entity position="-25 35.5 0" rotation="90 0 180" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="-15 35.5 0" rotation="90 0 180" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="-5 35.5 0" rotation="90 0 180" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="5 35.5 0" rotation="90 0 180" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="15 35.5 0" rotation="90 0 180" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				<a-entity position="25 35.5 0" rotation="90 0 180" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+				
+
 			</a-entity>
 
 
